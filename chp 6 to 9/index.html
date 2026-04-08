@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ceepter 6 to 9</title>
+    <script>
+//         q- 1. Write a program to take a number in a variable, do the
+// required arithmetic to display the following result in your
+// browser:
+var a = 10;
+
+document.write("Result:<br>");
+document.write("The value of a is: " + a + "<br>");
+document.write(".................................................<br><br>");
+
+// Stage 1: ++a
+document.write("The value of ++a is: " + (++a) + "<br>"); // 11 ho gaya
+document.write("Now the value of a is: " + a + "<br><br>");
+
+// Stage 2: a++
+document.write("The value of a++ is: " + (a++) + "<br>"); // Pehle 11 dikhayega, phir 12 karega
+document.write("Now the value of a is: " + a + "<br><br>");
+
+// Stage 3: --a
+document.write("The value of --a is: " + (--a) + "<br>"); // 12 se wapas 11 ho gaya
+document.write("Now the value of a is: " + a + "<br><br>");
+
+// Stage 4: a--
+document.write("The value of a-- is: " + (a--) + "<br>"); // Pehle 11 dikhayega, phir 10 karega
+document.write("Now the value of a is: " + a + "<br>");
+
+//q- 2. What will be the output in variables a, b & result after execution of the following script:
+// var a = 2, b = 1;
+// var result = --a - --b + ++b + b--;
+// Explain the output at each stage:
+
+var a = 2, b = 1;
+var result = --a - --b + ++b + b--;
+
+document.write("a is: " + a + "<br>");
+document.write("b is: " + b + "<br>");
+document.write("result is: " + result);
+
+//q- 3. Write a program that takes input a name from user &
+// greet the user.
+
+// 1. User se naam input lena
+var userName = prompt("Please enter your name:");
+
+// 2. User ko greet karna
+// Agar user ne naam likha hai, to greet karein
+if (userName !== null && userName !== "") {
+    alert("Hello " + userName + "! Welcome to our website.");
+    // Ya phir screen par dikhane ke liye:
+    // document.write("<h1>Hello " + userName + "! Welcome to our website.</h1>");
+} else {
+    alert("Hello Guest! Welcome.");
+}
+
+// q -5. Write a program to take input a number from user &
+// display it’s multiplication table on your browser. If user
+// does not enter a new number, multiplication table of 5
+// should be displayed by default.
+
+// 1. User se number lena (Default value 5 rakhi hai)
+var num = prompt("Enter a number to display its multiplication table:", 5);
+
+// 2. Check karna ke user ne kuch enter kiya hai ya nahi
+// Agar user input khali chorta hai ya 'Cancel' karta hai, toh 5 ka table dikhao
+if (num === "" || num === null) {
+    num = 5;
+}
+
+// 3. Browser par heading dikhana
+document.write("<h2>Multiplication Table of " + num + "</h2>");
+
+// 4. Loop ke zariye table print karna (1 se 10 tak)
+for (var i = 1; i <= 10; i++) {
+    document.write(num + " x " + i + " = " + (num * i) + "<br>");
+}
+
+// q-6. Take
+// a) Take three subjects name from user and store them in 3
+// different variables.
+// b) Total marks for each subject is 100, store it in another
+// variable.
+// c) Take obtained marks for first subject from user and
+// stored it in different variable.
+
+// ALERTS | JAVASCRIPT
+
+// Page 3 of 3
+// d) Take obtained marks for remaining 2 subjects from user
+// and store them in variables.
+// e) Now calculate total marks and percentage and show the
+// result in browser like this.(Hint: user table)
+
+// a) Subjects ke naam lena
+var sub1 = prompt("Enter first subject name:");
+var sub2 = prompt("Enter second subject name:");
+var sub3 = prompt("Enter third subject name:");
+
+// b) Total marks store karna
+var totalMarksPerSubject = 100;
+
+// c) & d) Obtained marks lena
+var marks1 = Number(prompt("Enter obtained marks for " + sub1 + ":"));
+var marks2 = Number(prompt("Enter obtained marks for " + sub2 + ":"));
+var marks3 = Number(prompt("Enter obtained marks for " + sub3 + ":"));
+
+// e) Calculations
+var grandTotal = totalMarksPerSubject * 3;
+var obtainedTotal = marks1 + marks2 + marks3;
+var percentage = (obtainedTotal / grandTotal) * 100;
+
+// Browser mein table dikhana
+document.write("<table border='1' cellspacing='0' cellpadding='10'>");
+document.write("<tr><th>Subject</th><th>Total Marks</th><th>Obtained Marks</th><th>Percentage</th></tr>");
+
+document.write("<tr><td>" + sub1 + "</td><td>" + totalMarksPerSubject + "</td><td>" + marks1 + "</td><td>" + (marks1 / totalMarksPerSubject * 100) + "%</td></tr>");
+document.write("<tr><td>" + sub2 + "</td><td>" + totalMarksPerSubject + "</td><td>" + marks2 + "</td><td>" + (marks2 / totalMarksPerSubject * 100) + "%</td></tr>");
+document.write("<tr><td>" + sub3 + "</td><td>" + totalMarksPerSubject + "</td><td>" + marks3 + "</td><td>" + (marks3 / totalMarksPerSubject * 100) + "%</td></tr>");
+
+document.write("<tr><th>Total</th><th>" + grandTotal + "</th><th>" + obtainedTotal + "</th><th>" + percentage.toFixed(2) + "%</th></tr>");
+document.write("</table>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+

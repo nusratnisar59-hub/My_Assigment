@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chepter 9 to 11</title>
+    <script>
+//         q - 1
+//         1. Write a program to take “city” name as input from user. If
+// user enters “Karachi”, welcome the user like this:
+// “Welcome to city of lights”
+
+
+// User se city ka naam input lein
+var city = prompt("Please enter your city name:");
+
+// Check karein ke input "Karachi" hai ya nahi
+if (city === "Karachi" || city === "karachi") {
+    document.write("Welcome to city of lights");
+}
+
+
+
+
+
+// q - 2
+// 2. Write a program to take “gender” as input from user. If the
+// user is male, give the message: Good Morning Sir. If the
+// user is female, give the message: Good Morning Ma’am.
+
+
+// User se gender input lein
+var gender = prompt("Please enter your gender (male/female):");
+
+// Condition check karein
+if (gender.toLowerCase() === "male") {
+    alert("Good Morning Sir.");
+} 
+else if (gender.toLowerCase() === "female") {
+    alert("Good Morning Ma’am.");
+} 
+else {
+    alert("Good Morning!");
+}
+
+
+
+
+
+// q - 3
+// 3. Write a program to take input color of road traffic signal
+// from the user & show the message according to this table:
+// Signal color Message
+// Red Must Stop
+// Yellow Ready to move
+// Green Move now
+
+
+// User se signal color input lein
+var signalColor = prompt("Enter traffic signal color (Red, Yellow, or Green):");
+
+// Table ka header start karein
+document.write("<table border='1' cellpadding='10' cellspacing='0'>");
+document.write("<tr><th>Signal Color</th><th>Message</th></tr>");
+
+// Conditions check karein aur table row add karein
+if (signalColor.toLowerCase() === "red") {
+    document.write("<tr><td>Red</td><td>Must Stop</td></tr>");
+} 
+else if (signalColor.toLowerCase() === "yellow") {
+    document.write("<tr><td>Yellow</td><td>Ready to move</td></tr>");
+} 
+else if (signalColor.toLowerCase() === "green") {
+    document.write("<tr><td>Green</td><td>Move now</td></tr>");
+} 
+else {
+    document.write("<tr><td colspan='2'>Invalid Color! Please enter Red, Yellow, or Green.</td></tr>");
+}
+
+document.write("</table>");
+
+
+
+
+
+
+// q - 4
+// 4. Write a program to take input remaining fuel in car (in
+// litres) from user. If the current fuel is less than 0.25litres,
+// show the message “Please refill the fuel in your car”
+
+
+// User se fuel ki miqdar input lein
+var remainingFuel = prompt("Enter remaining fuel in car (in litres):");
+
+// Condition check karein: Kya fuel 0.25 litres se kam hai?
+if (parseFloat(remainingFuel) < 0.25) {
+    document.write("Please refill the fuel in your car");
+} else {
+    document.write("You have enough fuel for now.");
+}
+
+
+
+
+
+// q - 5
+// 5. Run this script, & check whether alert message would be
+// displayed or not. Record the outputs.
+// a. var a = 4;
+// if (++a === 5){
+// alert("given condition for variable a is true");
+// }
+
+// User Input & Conditional Statement | JAVASCRIPT
+
+// Page 2 of 4
+
+// b. var b = 82;
+// if (b++ === 83){
+// alert("given condition for variable b is true");
+// }
+// c. var c = 12;
+// if (c++ === 13){
+// alert("condition 1 is true");
+// }
+// if (c === 13){
+// alert("condition 2 is true");
+// }
+// if (++c < 14){
+// alert("condition 3 is true");
+// }
+// if(c === 14){
+// alert("condition 4 is true");
+// }
+// d. var materialCost = 20000;
+// var laborCost = 2000;
+// var totalCost = materialCost + laborCost;
+// if (totalCost === laborCost + materialCost){
+// alert("The cost equals");
+// }
+// e. if (true){
+// alert("True");
+// }
+// if (false){
+// alert("False");
+// }
+
+// User Input & Conditional Statement | JAVASCRIPT
+
+// Page 3 of 4
+
+// f. if("car" < "cat"){
+// alert("car is smaller than cat");
+// }
+
+
+// a
+var a = 4;
+if (++a === 5){
+    alert("given condition for variable a is true"); // Displayed
+}
+
+// b
+var b = 82;
+if (b++ === 83){
+    alert("given condition for variable b is true"); // Not displayed
+}
+
+// c
+var c = 12;
+if (c++ === 13){ alert("condition 1 is true"); } // Not displayed
+if (c === 13){ alert("condition 2 is true"); }   // Displayed
+if (++c < 14){ alert("condition 3 is true"); }   // Not displayed
+if(c === 14){ alert("condition 4 is true"); }    // Displayed
+
+// d
+var materialCost = 20000;
+var laborCost = 2000;
+var totalCost = materialCost + laborCost;
+if (totalCost === laborCost + materialCost){
+    alert("The cost equals"); // Displayed
+}
+
+// e
+if (true){ alert("True"); }  // Displayed
+if (false){ alert("False"); } // Not displayed
+
+// f
+if("car" < "cat"){
+    alert("car is smaller than cat"); // Displayed
+}
+
+
+
+
+
+// q - 6
+// 6. Write a program to take input the marks obtained in three
+// subjects & total marks. Compute & show the resulting
+// percentage on your page. Take percentage & compute
+// grade as per following table:
+
+// Show the total marks, marks obtained, percentage, grade &
+// remarks like:
+
+
+// 1. Secret number store karein (1 se 10 ke darmiyan)
+var secretNumber = 7;
+
+// 2. User se guess input lein
+var userGuess = Number(prompt("Guess the secret number (between 1 to 10):"));
+
+// 3. Logic check karein
+if (userGuess === secretNumber) {
+    alert("Bingo! Correct answer");
+} 
+else if (userGuess === secretNumber + 1 || userGuess === secretNumber - 1) {
+    alert("Close enough to the correct answer");
+} 
+else {
+    alert("Try again! The secret number was " + secretNumber);
+}
+
+
+
+
+
+// q - 7
+// 7. Guess game:
+// Store a secret number (ranging from 1 to 10) in a variable.
+// Prompt user to guess the secret number.
+// a. If user guesses the same number, show “Bingo! Correct
+// answer”.
+// b. If the guessed number +1 is the secret number, show
+// “Close enough to the correct answer”.
+
+
+// 1. Secret number store karein (1 se 10 ke darmiyan)
+var secretNumber = 7;
+
+// 2. User se guess input lein
+var userGuess = Number(prompt("Guess the secret number (between 1 to 10):"));
+
+// 3. Conditions check karein
+if (userGuess === secretNumber) {
+    // a. Agar guess bilkul sahi hai
+    alert("Bingo! Correct answer");
+} 
+else if (userGuess + 1 === secretNumber) {
+    // b. Agar guess kiya hua number secret number se 1 kam hai
+    alert("Close enough to the correct answer");
+} 
+else {
+    // Agar dono conditions galat hain
+    alert("Try again!");
+}
+
+
+
+
+
+
+// q - 8
+// 8. Write a program to check whether the given number is
+// divisible by 3. Show the message to the user if the number
+// is divisible by 3.
+
+
+// 1. User se number input lein
+var number = Number(prompt("Enter a number to check if it's divisible by 3:"));
+
+// 2. Modulus (%) operator se check karein
+// Agar number 3 se divide ho kar 0 bachta hai, to wo divisible hai
+if (number % 3 === 0) {
+    alert("The number " + number + " is divisible by 3.");
+} 
+else {
+    alert("The number " + number + " is not divisible by 3.");
+}
+
+
+
+
+
+
+// q - 9
+// 9. Write a program that checks whether the given input is an
+// even number or an odd number.
+
+
+// 1. User se number input lein
+var num = Number(prompt("Enter a number to check if it's Even or Odd:"));
+
+// 2. Condition check karein (2 par divide kar ke)
+if (num % 2 === 0) {
+    alert(num + " is an Even number.");
+} 
+else {
+    alert(num + " is an Odd number.");
+}
+
+
+
+
+
+// q - 10
+// 10. Write a program that takes temperature as input and
+// shows a message based on following criteria
+// a. T > 40 then “It is too hot outside.”
+// b. T > 30 then “The Weather today is Normal.”
+// c. T > 20 then “Today’s Weather is cool.”
+// d. T > 10 then “OMG! Today’s weather is so Cool.”
+
+
+// 1. User se temperature input lein
+var temp = Number(prompt("Enter the temperature:"));
+
+// 2. Conditions check karein
+if (temp > 40) {
+    alert("It is too hot outside.");
+} 
+else if (temp > 30) {
+    alert("The Weather today is Normal.");
+} 
+else if (temp > 20) {
+    alert("Today’s Weather is cool.");
+} 
+else if (temp > 10) {
+    alert("OMG! Today’s weather is so Cool.");
+}
+else {
+    alert("It's freezing outside!");
+}
+
+
+
+
+
+// q - 11
+// 11. Write a program to create a calculator for +,-,*, / & %
+// using if statements. Take the following input:
+// a. First number
+// b. Second number
+// c. Operation (+, -, *, /, %)
+// Compute & show the calculated result to user.
+
+
+// 1. Inputs lene ke liye variables
+var firstNumber = Number(prompt("Enter First Number:"));
+var secondNumber = Number(prompt("Enter Second Number:"));
+var operation = prompt("Enter Operation (+, -, *, /, %):");
+
+var result;
+
+// 2. Calculator Logic using if-else statements
+if (operation === "+") {
+    result = firstNumber + secondNumber;
+} 
+else if (operation === "-") {
+    result = firstNumber - secondNumber;
+} 
+else if (operation === "*") {
+    result = firstNumber * secondNumber;
+} 
+else if (operation === "/") {
+    // Division by zero check (Good practice!)
+    if (secondNumber === 0) {
+        result = "Error! Cannot divide by zero.";
+    } else {
+        result = firstNumber / secondNumber;
+    }
+} 
+else if (operation === "%") {
+    result = firstNumber % secondNumber;
+} 
+else {
+    result = "Invalid Operation! Please use +, -, *, / or %";
+}
+
+// 3. Result ko screen par dikhana
+document.write("<h1>Simple Calculator</h1>");
+document.write("First Number: " + firstNumber + "<br>");
+document.write("Second Number: " + secondNumber + "<br>");
+document.write("Operation: " + operation + "<br>");
+document.write("----------------------------<br>");
+document.write("<strong>Result: " + result + "</strong>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
