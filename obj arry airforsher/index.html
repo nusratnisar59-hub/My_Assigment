@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logic Systems Forms</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
+        .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { color: #333; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        input { padding: 8px; margin: 5px 0; width: 200px; display: block; }
+        button { padding: 8px 15px; background: #28a745; color: white; border: none; cursor: pointer; border-radius: 4px; }
+        button:hover { background: #218838; }
+        .result { margin-top: 10px; font-weight: bold; color: #d9534f; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>1. Student Result Checker</h2>
+        <input type="text" id="stuName" placeholder="Student Name">
+        <input type="number" id="stuMarks" placeholder="Enter Marks">
+        <button onclick="checkResult()">Check Status</button>
+        <div id="res1" class="result"></div>
+    </div>
+
+    <div class="card">
+        <h2>2. Login System</h2>
+        <input type="email" id="email" placeholder="Email (user@test.com)">
+        <input type="password" id="pass" placeholder="Password (12345)">
+        <button onclick="login()">Login</button>
+        <div id="res2" class="result"></div>
+    </div>
+
+    <div class="card">
+        <h2>3. Simple To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="Enter Task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        // 1. Result Logic
+        function checkResult() {
+            let name = document.getElementById('stuName').value;
+            let marks = document.getElementById('stuMarks').value;
+            let resDiv = document.getElementById('res1');
+            
+            if(marks >= 40) {
+                resDiv.style.color = "green";
+                resDiv.innerHTML = name + " pass ho gaya! 🎉";
+            } else {
+                resDiv.style.color = "red";
+                resDiv.innerHTML = name + " fail hai. ❌";
+            }
+        }
+
+        // 2. Login Logic
+        function login() {
+            let email = document.getElementById('email').value;
+            let pass = document.getElementById('pass').value;
+            let resDiv = document.getElementById('res2');
+
+            if(email === "user@test.com" && pass === "12345") {
+                resDiv.style.color = "green";
+                resDiv.innerText = "Login Successful! Welcome.";
+            } else {
+                resDiv.style.color = "red";
+                resDiv.innerText = "Ghalat Email ya Password!";
+            }
+        }
+
+        // 3. To-Do Logic
+        let tasks = [];
+        function addTask() {
+            let input = document.getElementById('taskInput');
+            if(input.value !== "") {
+                tasks.push(input.value);
+                displayTasks();
+                input.value = "";
+            }
+        }
+
+        function displayTasks() {
+            let list = document.getElementById('taskList');
+            list.innerHTML = ""; // List clear karein
+            tasks.forEach((item, index) => {
+                list.innerHTML += `<li>${item} <button onclick="deleteTask(${index})" style="background:red; padding:2px 5px; font-size:10px;">Delete</button></li>`;
+            });
+        }
+
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            displayTasks();
+        }
+    </script>
+</body>
+</html>
